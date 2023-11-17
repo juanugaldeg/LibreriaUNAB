@@ -17,6 +17,10 @@ public class Libro {
         CantidadDisponible = cantidadDisponible;
     }
 
+    public Libro(){
+
+    }
+
     //Getter and Setter
     public Integer getISBN() {
         return ISBN;

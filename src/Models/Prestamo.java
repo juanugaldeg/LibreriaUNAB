@@ -22,6 +22,9 @@ public class Prestamo {
         DatosTarjeta = datosTarjeta;
     }
 
+    public Prestamo(){
+
+    }
     //Getter and Setter
     public Integer getIDPrestamo() {
         return IDPrestamo;
