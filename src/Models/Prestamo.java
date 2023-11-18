@@ -6,13 +6,13 @@ public class Prestamo {
     private Integer IDPrestamo;
     private Integer ISBN;
     private String RUT;
-    private Date   FechaPrestamo;
+    private String   FechaPrestamo;
     private Integer DiasPrestamo;
-    private Date FechaDevolucion;
+    private String FechaDevolucion;
     private String DatosTarjeta;
 
     //Constructor
-    public Prestamo(Integer IDPrestamo, Integer ISBN, String RUT, Date fechaPrestamo, Integer diasPrestamo, Date fechaDevolucion, String datosTarjeta) {
+    public Prestamo(Integer IDPrestamo, Integer ISBN, String RUT, String fechaPrestamo, Integer diasPrestamo, String fechaDevolucion, String datosTarjeta) {
         this.IDPrestamo = IDPrestamo;
         this.ISBN = ISBN;
         this.RUT = RUT;
@@ -21,11 +21,10 @@ public class Prestamo {
         FechaDevolucion = fechaDevolucion;
         DatosTarjeta = datosTarjeta;
     }
-
+    //Getter and Setter
     public Prestamo(){
 
     }
-    //Getter and Setter
     public Integer getIDPrestamo() {
         return IDPrestamo;
     }
@@ -50,11 +49,11 @@ public class Prestamo {
         this.RUT = RUT;
     }
 
-    public Date getFechaPrestamo() {
+    public String getFechaPrestamo() {
         return FechaPrestamo;
     }
 
-    public void setFechaPrestamo(Date fechaPrestamo) {
+    public void setFechaPrestamo(String fechaPrestamo) {
         FechaPrestamo = fechaPrestamo;
     }
 
@@ -66,11 +65,11 @@ public class Prestamo {
         DiasPrestamo = diasPrestamo;
     }
 
-    public Date getFechaDevolucion() {
+    public String getFechaDevolucion() {
         return FechaDevolucion;
     }
 
-    public void setFechaDevolucion(Date fechaDevolucion) {
+    public void setFechaDevolucion(String fechaDevolucion) {
         FechaDevolucion = fechaDevolucion;
     }
 
@@ -81,7 +80,5 @@ public class Prestamo {
     public void setDatosTarjeta(String datosTarjeta) {
         DatosTarjeta = datosTarjeta;
     }
-
-
 
 }

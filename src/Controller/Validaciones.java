@@ -1,4 +1,7 @@
 package Controller;
+import Models.Libro;
+import Models.Usuario;
+import java.util.ArrayList;
 
 public class Validaciones {
 
@@ -9,17 +12,24 @@ public class Validaciones {
 
 // -------------------     VALIDACIONES USUARIO     --------------------\\
 
-//1.2.1. El RUN no puede repetirse : Este metodo no se puede implementar ya que no existe BD contra la cual validar. Sin embargo se deja enunciado apuntando a teorico metodo ValidaExistenciaRUT()
-    public static boolean ValidaRutUnico (String Rut){
+//1.2.1. El RUN no puede repetirse
+    public static boolean ValidaRutUnico (ArrayList<Usuario> usuarios, String RUT){
        boolean resultado = true;
-       //resultado = ValidaExistenciaRut(Rut);
+        for (Usuario usuario : usuarios)
+            if (usuario.getRUT().equals(RUT)) {
+                resultado = false;
+                break;
+            }
         return resultado;
     }
 
 //1.2.2. Debe validar formato y dígito verificador del RUN
-/* Metodo tomado de stackoverflow https://es.stackoverflow.com/questions/118104/validacion-de-rut-en-java  Este metodo recibe el rut y el digito originalmente como string en forma separada como dos enteros, realiza la formula de validacion y devuelve el resultado boleano */
-    public static Boolean ValidarRut(final int rutSinVerificador, final int digitoVerificador) {
-        int rut = rutSinVerificador; //rut sin dígito verificador.
+/* Se Modifico metodo tomado de stackoverflow https://es.stackoverflow.com/questions/118104/validacion-de-rut-en-java */
+    public static Boolean ValidarRut(String RUT) {
+        String[] rutSplit = RUT.split("-");
+        String rutNumeros = rutSplit[0];
+        int rut = Integer.parseInt(rutNumeros.substring(0, rutNumeros.length() - 1));
+        int digitoVerificador = Integer.parseInt(rutNumeros.substring(rutNumeros.length() - 1));
         int contador = 2;
         int acumulador = 0;
         while (rut != 0) {
@@ -36,9 +46,9 @@ public class Validaciones {
     }
 
 //1.2.3. Debe validar que el género del usuario sea M o F.
-    public static boolean ValidaGenero (Character Genero){
+    public static boolean ValidaGenero (Character genero){
         boolean resultado;
-        resultado = Genero == 'M' || Genero == 'F';
+        resultado = genero == 'M' || genero == 'F';
         return resultado;
     }
 
@@ -48,17 +58,22 @@ public class Validaciones {
 // -------------------     VALIDACIONES LIBRO     --------------------\\
 
 //2.2.1. El ISBN debe ser único
-    public static boolean ValidaExistenciaISBN (Integer ISBN){
+    public static boolean ValidaExistenciaISBN (ArrayList<Libro> libros, Integer ISBN){
     boolean resultado = true;
-    //resultado = ValidaExistenciaISBN(ISBN);
-    return resultado;
+        for (Libro libro : libros)
+            if (libro.getISBN().equals(ISBN)) {
+                resultado = false;
+                break;
+            }
+        return resultado;
     }
 
-//2.2.2. Cantidad en biblioteca debe ser mayor a cero
+/* 2.2.2. Cantidad en biblioteca debe ser mayor a cero : No existe la clase Biblioteca, no se puede realizar esta validacion
+    Se deja enunciada la funcion, solo se valida que el ingreso de usuario sea > 0 */
     public static boolean ValidaStockTotalLibro (Integer ISBN){
     boolean resultado = true;
     Integer StockTotalLibro = 0;
-    //StockTotalLibro = StockTotalLibro(ISBN);
+    // desarollo de la validacion
 
     if (StockTotalLibro <= 0){
        resultado = false;

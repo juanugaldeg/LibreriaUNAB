@@ -4,14 +4,14 @@ public class Usuario {
 
     private String NombreCompleto;
     private String RUT;
-    private String Genero;
+    private Character Genero;
     private String Carrera;
     private Integer Prestamo;
 
 
-    //Constructor
+//Constructor
 
-    public Usuario(String nombreCompleto, String RUT, String genero, String carrera, int prestamo) {
+    public Usuario(String nombreCompleto, String RUT, Character genero, String carrera, int prestamo) {
         NombreCompleto = nombreCompleto;
         this.RUT = RUT;
         Genero = genero;
@@ -23,7 +23,6 @@ public class Usuario {
 
     }
     // Getter and Setter
-
     public String getNombreCompleto() {
         return NombreCompleto;
     }
@@ -40,11 +39,11 @@ public class Usuario {
         this.RUT = RUT;
     }
 
-    public String getGenero() {
+    public Character getGenero() {
         return Genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(Character genero) {
         Genero = genero;
     }
 
@@ -56,14 +55,12 @@ public class Usuario {
         Carrera = carrera;
     }
 
-    public int getPrestamo() {
+    public Integer getPrestamo() {
         return Prestamo;
     }
 
     public void setPrestamo(Integer prestamo) {
         Prestamo = prestamo;
     }
-
-
 
 }
