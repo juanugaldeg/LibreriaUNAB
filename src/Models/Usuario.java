@@ -4,14 +4,14 @@ public class Usuario {
 
     private String NombreCompleto;
     private String RUT;
-    private Character Genero;
+    private String Genero;
     private String Carrera;
     private Integer Prestamo;
 
 
 //Constructor
 
-    public Usuario(String nombreCompleto, String RUT, Character genero, String carrera, int prestamo) {
+    public Usuario(String nombreCompleto, String RUT, String genero, String carrera, int prestamo) {
         NombreCompleto = nombreCompleto;
         this.RUT = RUT;
         Genero = genero;
@@ -39,11 +39,11 @@ public class Usuario {
         this.RUT = RUT;
     }
 
-    public Character getGenero() {
+    public String getGenero() {
         return Genero;
     }
 
-    public void setGenero(Character genero) {
+    public void setGenero(String genero) {
         Genero = genero;
     }
 
