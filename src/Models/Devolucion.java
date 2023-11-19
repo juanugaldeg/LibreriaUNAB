@@ -13,6 +13,10 @@ public class Devolucion {
         this.RUT = RUT;
     }
 
+    public Devolucion(){
+
+    }
+
     //Getter and Setter
     public Integer getIDPrestamo() {
         return IDPrestamo;
